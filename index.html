@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam Portal</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Online Exam Portal</h2>
+        <form id="loginForm">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            
+            <button type="submit">Login</button>
+        </form>
+    </div>
+    
+    <div id="examSection" class="hidden">
+        <h2>Exam</h2>
+        <form id="examForm">
+            <p>1. What is the capital of France?</p>
+            <input type="radio" name="q1" value="Paris" required> Paris<br>
+            <input type="radio" name="q1" value="London"> London<br>
+            <input type="radio" name="q1" value="Rome"> Rome<br>
+            
+            <button type="submit">Submit Exam</button>
+        </form>
+    </div>
+    
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            document.querySelector('.container').classList.add('hidden');
+            document.getElementById('examSection').classList.remove('hidden');
+        });
+    </script>
+</body>
+</html>
